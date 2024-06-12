@@ -4,6 +4,8 @@ import { ColorModeSwitcher } from "../../ColorModeSwitcher"
 import { Text, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, HStack, VStack, useDisclosure } from '@chakra-ui/react';
 import { RiDashboardFill, RiLogoutBoxLine, RiMenu5Fill } from 'react-icons/ri'
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../redux/actions/user';
 
 
 const NavList = ({ url, title, onClose }) => (
@@ -12,17 +14,15 @@ const NavList = ({ url, title, onClose }) => (
   </Link>
 )
 
-const isAuthenticated = true;
-const user = {
-  role: "admin"
-}
 
-const logouthandler = () => {
-  console.log("Loutout");
-  onclose();
-}
-const Header = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+const Header = ({isAuthenticated = false,user}) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const dispatch = useDispatch()
+  const logouthandler = () => {
+    onClose();
+    dispatch(logout());
+  }
+
   return (
     <>
       <ColorModeSwitcher></ColorModeSwitcher>

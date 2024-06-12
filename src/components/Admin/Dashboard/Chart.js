@@ -29,7 +29,7 @@ chartJS.register(
 );
 
 // React component for a Line Chart
-export const LineChart = () => {
+export const LineChart = ({ views = [] }) => {
     // Data for the x-axis (labels) of the chart
     const labels = getLastyearMonths()
 
@@ -53,7 +53,7 @@ export const LineChart = () => {
         datasets: [
             {
                 label: 'views', // Label for the dataset
-                data: [1, 2, 3, 4], // Y-axis data points corresponding to each label
+                data: views, // Y-axis data points corresponding to each label
                 borderColor: 'rgba(107,70,193,0.5)', // Border color of the line
                 backgroundColor: '#6b46c1', // Background color of the line
             },
@@ -65,7 +65,7 @@ export const LineChart = () => {
 };
 
 
-export const DohghnutChart = () => {
+export const DohghnutChart = ({ users = [] }) => {
     // Data for the x-axis (labels) of the chart
 
 
@@ -76,7 +76,7 @@ export const DohghnutChart = () => {
         datasets: [
             {
                 label: 'views', // Label for the dataset
-                data: [3, 20], // Y-axis data points corresponding to each label
+                data: users, // Y-axis data points corresponding to each label
                 borderColor: ['rbga(62,12,171)', 'rgba(214,43,129)'],// Border color of the line
                 backgroundColor: ['rbga(62,12,171,0.3)', 'rgba(214,43,129,0.3)'], // Background color of the line
                 borderWidth: "1"
@@ -105,9 +105,8 @@ function getLastyearMonths() {
     ];
 
     const currentMonth = new Date().getMonth();
-    console.log(currentMonth);
 
-    const remain = 11 - currentMonth;
+
 
     for (let i = currentMonth; i < months.length; i--) {
         const element = months[i];

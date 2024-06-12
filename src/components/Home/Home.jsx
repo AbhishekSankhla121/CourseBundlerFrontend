@@ -60,7 +60,7 @@ const Home = () => {
         <div className="container-2">
             <video
             
-            controls={'true'}
+            controls
             controlsList={'nodownload nofullscreen noremoteplayback '}
             disablePictureInPicture
             disableRemotePlayback
