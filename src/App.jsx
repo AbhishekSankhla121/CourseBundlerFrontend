@@ -35,9 +35,9 @@ import Loader from './components/layout/Loader/Loader';
 // components import end here
 
 function App() {
-  // TODO: window.addEventListener('contextmenu',(e)=>{
-  //   e.preventDefault();
-  // })
+  TODO: window.addEventListener('contextmenu',(e)=>{
+    e.preventDefault();
+  })
 
   const { isAuthenticated, user, message, error, loading } = useSelector(
     state => state.user
