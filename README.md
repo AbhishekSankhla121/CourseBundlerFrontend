@@ -1,8 +1,4 @@
-Prerequisites
-Before you begin, ensure you have the following installed on your local machine:
 
-Node.js (v14 or higher)
-npm (Node Package Manager)
 Installation
 1. Clone the Repository
 bash
